@@ -7,8 +7,7 @@
   </head>
   <body>
     <form id="form" method="get">
-      <input type="text" />
-      <input type="submit" />
+      <input type="submit" id="submit"/>
     </form>
     <script type="text/javascript" src="https://w19.captcha.at/sdk.js"></script>
     <script defer>
@@ -18,10 +17,15 @@
         "yRpweeOXmCvUcwedqjzO-x-21fc5cc2faaba1038ffe4fd2c83e8fb837514064"
       );
 
-      KROT.getSolution().then((solution) => {
-        console.log(solution);
-      });
+      document.getElementById('submit').addEventListener('click', function(event) {
 
+        event.preventDefault();
+
+        KROT.getSolution().then((solution) => {
+          console.log(solution);
+        });
+
+      });
     </script>
   </body>
 </html>
