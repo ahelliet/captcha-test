@@ -6,19 +6,21 @@
     <title>Document</title>
   </head>
   <body>
-    <form id="form">
+    <form id="form" method="get">
       <input type="text" />
       <input type="submit" />
     </form>
     <script type="text/javascript" src="https://w19.captcha.at/sdk.js"></script>
     <script defer>
+      KROT.init();
       KROT.setup(
+        // "wneeOYpiMQHTFcuMxlaI-x-b6406cb44b6c1fcd8560d934aaee0bdd9684409d"
         "yRpweeOXmCvUcwedqjzO-x-21fc5cc2faaba1038ffe4fd2c83e8fb837514064"
       );
 
-      var form = document.getElementById("form");
-      console.log(KROT.interceptForm(form));
-      KROT.interceptForm(form);
+      KROT.getSolution().then((solution) => {
+        console.log(solution);
+      });
 
     </script>
   </body>
